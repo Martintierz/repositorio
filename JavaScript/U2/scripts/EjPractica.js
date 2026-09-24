@@ -28,4 +28,5 @@ let num6 = 0x1A57;
 let numeros = [num1, num2, num3, num4, num5, num6];
 
 console.log(numeros);
+console.log(typeof(num1), typeof(num2), typeof(num3), typeof(num4), typeof(num5), typeof(num6));
 
