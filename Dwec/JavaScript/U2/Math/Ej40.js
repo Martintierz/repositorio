@@ -11,16 +11,18 @@ function calcularAngulo(){
     let texto1 = "coseno";
     let texto2 = "seno";
 
-    if(eleccion.toLocaleLowerCase = texto1){
+    if(eleccion.toLocaleLowerCase() == texto1){
         let anguloRadianes = angulo *(Math.PI/180);
         let resultadoCoseno = Math.cos(anguloRadianes);
 
         console.log(resultadoCoseno);
-    }else if(eleccion.toLocaleLowerCase = texto2){
+    }else if(eleccion.toLocaleLowerCase() == texto2){
+        let anguloRadianes = angulo *(Math.PI/180);
         let resultadoSeno = Math.sin(anguloRadianes);
 
         console.log(resultadoSeno);
     }else{
+        let anguloRadianes = angulo *(Math.PI/180);
         let resultadoTangente = Math.tan(anguloRadianes);
 
         console.log(resultadoTangente);
