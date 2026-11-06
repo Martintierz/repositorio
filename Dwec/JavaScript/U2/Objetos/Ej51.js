@@ -15,10 +15,27 @@ const juego = {
     plataforma: "Multiplataforma",
     AñoLanzamiento: "2020",
     precio: 24,
-    completado:"si"
+    completado:"si",
+
+    tituloPrecio: function(){
+        return "El juego es " + this.titulo + " y su precio es " + this.precio + "€";
+    },
+
+    getPlataforma: function(){
+        return "El juego es " + this.plataforma;
+    }
 };
 
 console.log("El juego es " + juego.titulo +  " es " + juego.plataforma + " salio en el año " + juego.AñoLanzamiento + " su precio es " + juego.precio + "€");
 
 juego.precio = parseInt(prompt("Introduce el nuevo precio del juego"));
 console.log("El nuevo precio es " + juego.precio);
+
+juego.nota = parseInt(prompt("Introduce la nota del juego"));
+console.log("La nota de " + juego.titulo + " es: " + juego.nota);
+
+delete juego.AñoLanzamiento;
+console.log("El juego es " + juego.titulo +  " es " + juego.plataforma + " salio en el año " + juego.AñoLanzamiento + " su precio es " + juego.precio + "€");
+
+console.log(juego.tituloPrecio());
+console.log(juego.getPlataforma());
