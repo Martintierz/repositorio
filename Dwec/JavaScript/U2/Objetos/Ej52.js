@@ -4,22 +4,16 @@ muestre cada propiedad en una línea con el formato clave: valor.
 Debe funcionar con objetos que tengan cualquier número de propiedades. ¿Qué ocurre con los métodos?
 */
 
-const nombreObjeto=prompt("introduce el nombre del objeto")={
-        
+const juego = {
+    titulo: "CyberPunk2077",
+    plataforma: "Multiplataforma",
+    AñoLanzamiento: "2020",
+    precio: 24
 }
 
-function mostrarFicha(){
-    const nombreObjeto=prompt("introduce el nombre del objeto")={
-        propiedad1: prompt("Introduce la primera propiedad"),
-        propiedad2: prompt("Introduce la segunda propiedad"),
-        propiedad3: prompt("introduce la tercera propiedad"),
-        
-        valor: function(){
-            return this.propiedad1 + " " + this.propiedad2 + " " + this.propiedad3; 
-        }
-
-    }
-
+function mostrarFicha(juego){
+    return juego;
 }
 
-console.log();
+console.log(mostrarFicha());
+
