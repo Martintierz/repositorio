@@ -3,33 +3,95 @@ El ejercicio consiste en la gestión de una agenda de eventos. Los eventos se al
 El programa se organiza en tres partes: las clases que representan los datos, el objeto agenda, que contiene los eventos y los métodos para gestionarlos, 
 y el programa principal, que muestra el menú y es el único que se comunica con el usuario.
 */
+//Objetos
+class Invitado{
+    constructor(nombreInvitado, email){
+        this.nombreInvitado = nombreInvitado;
+        this.email = email;
+    }
 
-//Objeto Evento cambiar como hacerlo
-const Evento ={
-    nombre: prompt("Introduce el nombre del evento"),
-    dia: prompt("Introduce el día"),
-    mes: prompt("Introduce el mes"),
-    ano: prompt("Introduce el año"),
-    hora: prompt("Introduce la hora"),
-    minutos: prompt("Introduce los minutos"),
-    nombreLugar: prompt("Introduce el nombre del Lugar donde se celebra"),
-    invitado: Number(prompt("Introduce los numeros de Invitados")),
-    alertas: prompt("Introduce el numero de aletas que quieres que tenfa el evento")
+    comprobadorEmail(){
+        let emailComprobar = String(email);
+
+        if(emailComprobar.includes("@")){
+            console.log("Formato del email es correcto");
+        }else{
+            alert("El formato del Email es Incorrecto");
+        }
+    }
+
 }
 
-//metodo añadir Invitado
- function anadirInvitado(){
-    let nuevoInvitado = Number(prompt("Introduce los nuevos invitados"));
-    let sumarInvitado = (Evento.invitado + nuevoInvitado);
-    console.log(sumarInvitado + " se han añadido " + nuevoInvitado + " invitados al evento");
+class Alertas{
+    constructor(ano, mes, dia, hora, minutos, textoAlerta, timerID, activa){
+        this.fechaHora = new Date(ano, mes -1, dia, hora, minutos);
+        this. textoAlerta = textoAlerta;
+        this.timerID = timerID;
+        this.activa = true;
+    }
 }
 
-console.log(anadirInvitado());
+class Evento{
+    constructor(nombreEvento, ano, mes, dia, hora, minutos, lugar, invitados = [], alertas = []){
+        this.nombreEvento = nombreEvento;
+        this.fechaHora = new Date(ano, mes -1, dia, hora, minutos);
+        this.lugar = lugar;
+        this.invitados = [...invitados];
+        this.alertas = [...alertas];
+    }
 
+    anadirInvitados(Invitado){
+       this.invitados.push(Invitado);
+    }
 
-//Objeto Invitado
-/*const Invitado={
-    nombreInvitado: prompt("Introduce el nombre del Invitado"),
-    emailInvitado: prompt("Inrodcuce el email del Invitado")
+    anadirAlerta(Alertas){
+        this.alertas.push(Alertas);
+    }
+
 }
-*/
+
+const invitado1 = new Invitado("Koke", "koke@");
+
+const alerta1 = new Alertas(2026, );
+
+const evento1 = new Evento("Fiestas Calamocha", 2026, 11, 15, 20, 30, "Calamocha", invitado1, );
+
+const agenda = [];
+
+
+//Menu
+let opcion;
+
+do{
+    opcion = prompt(
+        "||---Menu Eventos---||"+ "\n" + "1-Añadir Evento" + "\n" + "2-Borrar Evento" + "\n" + "3-Modificar evento" + "\n" + "4-Desactivar las Alertas de un evento" + "\n" + "5-Borrar eventos pasados" + "\n" + "6-Salir mostrando la agenda sin guardar los cambios en el LocalStorage" + "\n" + "7-Salir guardando y mostrando la agenda" + "\n" + "Introduce el numero correspondiente a la opcion"
+    );
+
+    switch(opcion){
+        case "1":{
+            break;
+        }
+        case "2":{
+            break;
+        }
+        case "":{
+            break;
+        }
+        case "":{
+            break;        
+        }
+        case "":{
+            
+        }
+        case "":{
+            break;   
+        }
+        case "":{
+            break;
+        }
+        default:{
+            alert("Opcion no valida");
+            break;
+        }
+    }
+}while(opcion !==7);
